@@ -3,4 +3,6 @@
     <string name="log_in">Log In</string>
     <string name="create_account">Create Account</string>
     <string name="provenance">Provenance</string>
+    <string name="add_new_images">+ Add New Images</string>
+    <string name="view_images">View Images</string>
 </resources>
