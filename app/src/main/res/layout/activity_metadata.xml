@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MetadataActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/metadataTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/archival_description"
+                android:textColor="#3F51B5"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/metadataDescTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:text="@string/enter_collection_to_add_to_your_images"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/repLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/repository_name"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/colInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/bertram_david_wolfe_papers"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/colLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/collection_title"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/repInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hoover_institution_library_archives"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/boxLabel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/box"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/boxInput"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/_12"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/folderLabel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/folder"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/folderInput"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/_55"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/otherCntrLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/other_container_type"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/otherCntrInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/envelope_m"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/cntrDescLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/container_description"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/cntrDescInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/_12_prints_of_frida_kahlo"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tagsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/tags"
+                android:textColor="#3F51B5"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/tagsInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/frida_portraits_biography_project"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/metadataNextBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="#3F51B5"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="@string/next"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

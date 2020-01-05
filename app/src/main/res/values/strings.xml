@@ -5,4 +5,21 @@
     <string name="provenance">Provenance</string>
     <string name="add_new_images">+ Add New Images</string>
     <string name="view_images">View Images</string>
+    <string name="archival_description">Archival Description</string>
+    <string name="enter_collection_to_add_to_your_images">Enter collection information to add to your images.</string>
+    <string name="repository_name">Repository Name*</string>
+    <string name="bertram_david_wolfe_papers">Bertram David Wolfe papers</string>
+    <string name="collection_title">Collection Title*</string>
+    <string name="hoover_institution_library_archives"><![CDATA[Hoover Institution Library & Archives]]></string>
+    <string name="box">Box</string>
+    <string name="_12">12</string>
+    <string name="folder">Folder</string>
+    <string name="other_container_type">Other container type</string>
+    <string name="envelope_m">Envelope M</string>
+    <string name="_55">55</string>
+    <string name="container_description">Container Description</string>
+    <string name="_12_prints_of_frida_kahlo">12 prints of Frida Kahlo and ...</string>
+    <string name="frida_portraits_biography_project">Frida; portraits; biography project</string>
+    <string name="tags">Tags</string>
+    <string name="next">Next</string>
 </resources>
