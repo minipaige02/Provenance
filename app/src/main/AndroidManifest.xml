@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CameraActivity"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".MetadataActivity" />
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".Controller.NewAcctActivity" />
+        <activity android:name=".Controller.CameraActivity" />
+        <activity android:name=".Controller.MainActivity" />
+        <activity android:name=".Controller.MetadataActivity" />
+        <activity android:name=".Controller.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".Controller.HomeActivity" />
     </application>
 
 </manifest>

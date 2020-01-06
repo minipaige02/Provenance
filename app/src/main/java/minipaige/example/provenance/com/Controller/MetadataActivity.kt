@@ -1,8 +1,9 @@
-package minipaige.example.provenance.com
+package minipaige.example.provenance.com.Controller
 
 import android.content.Intent
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_metadata.*
+import minipaige.example.provenance.com.R
 
 class MetadataActivity : MainActivity() {
 

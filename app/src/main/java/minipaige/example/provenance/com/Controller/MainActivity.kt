@@ -1,4 +1,4 @@
-package minipaige.example.provenance.com
+package minipaige.example.provenance.com.Controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

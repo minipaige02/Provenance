@@ -1,8 +1,9 @@
-package minipaige.example.provenance.com
+package minipaige.example.provenance.com.Controller
 
 import android.content.Intent
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_welcome.*
+import minipaige.example.provenance.com.R
 
 class WelcomeActivity : MainActivity() {
 
@@ -13,6 +14,11 @@ class WelcomeActivity : MainActivity() {
         logInBtn.setOnClickListener {
             val homeIntent = Intent(this, HomeActivity::class.java)
             startActivity(homeIntent)
+        }
+
+        newAcctBtn.setOnClickListener {
+            val newAcctIntent = Intent(this, NewAcctActivity::class.java)
+            startActivity(newAcctIntent)
         }
     }
 }
