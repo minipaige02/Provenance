@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Controller.CameraActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="414dp"
+        android:layout_height="506dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/camImage"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/camera_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/ic_camera" />
+
+    <ImageView
+        android:id="@+id/homeImg"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:contentDescription="@string/home_image"
+        app:layout_constraintBottom_toBottomOf="@+id/camImage"
+        app:layout_constraintEnd_toStartOf="@+id/camImage"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/ic_home" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/checkImg"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:contentDescription="@string/checkmark_image"
+        app:layout_constraintBottom_toBottomOf="@+id/camImage"
+        app:layout_constraintStart_toEndOf="@+id/camImage"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/ic_check" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

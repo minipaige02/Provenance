@@ -23,4 +23,9 @@
     <string name="tags">Tags</string>
     <string name="next">Next</string>
     <string name="welcome_username">Welcome, USERNAME!</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="camera_image">camera image</string>
+    <string name="home_image">home image</string>
+    <string name="checkmark_image">checkmark image</string>
 </resources>

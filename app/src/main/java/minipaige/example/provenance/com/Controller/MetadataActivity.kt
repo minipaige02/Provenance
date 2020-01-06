@@ -39,7 +39,6 @@ class MetadataActivity : MainActivity() {
 
             val cameraIntent = Intent(this, CameraActivity::class.java)
             startActivity(cameraIntent)
-
         }
     }
 
