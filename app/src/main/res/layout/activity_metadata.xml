@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
@@ -51,11 +51,11 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/colInput"
+                android:id="@+id/repInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/bertram_david_wolfe_papers"
+                android:hint="@string/hoover_institution_library_archives"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -70,18 +70,18 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/repInput"
+                android:id="@+id/colInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/hoover_institution_library_archives"
+                android:hint="@string/bertram_david_wolfe_papers"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/boxLabel"
-                android:layout_width="150dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abhaya_libre_bold"
                 android:text="@string/box"
@@ -90,7 +90,7 @@
 
             <EditText
                 android:id="@+id/boxInput"
-                android:layout_width="150dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/_12"
@@ -100,7 +100,7 @@
 
             <TextView
                 android:id="@+id/folderLabel"
-                android:layout_width="150dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abhaya_libre_bold"
                 android:text="@string/folder"
@@ -109,7 +109,7 @@
 
             <EditText
                 android:id="@+id/folderInput"
-                android:layout_width="150dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/_55"

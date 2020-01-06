@@ -11,16 +11,16 @@
         android:id="@+id/welcomeTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="45dp"
         android:fontFamily="@font/abhaya_libre_bold"
+        android:text="@string/welcome_username"
         android:textColor="#3F51B5"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Welcome, USERNAME!" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/captureImgBtn"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
         android:background="#3F51B5"
