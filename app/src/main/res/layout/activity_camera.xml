@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Controller.CameraActivity">
 
-    <View
-        android:id="@+id/view"
+    <TextureView
+        android:id="@+id/view_finder"
+        android:layout_gravity="center_horizontal"
         android:layout_width="414dp"
         android:layout_height="506dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -15,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/camImg"
+        android:id="@+id/captureImg"
         android:layout_width="60dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -23,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view_finder"
         app:srcCompat="@drawable/ic_camera" />
 
     <ImageView
@@ -33,9 +34,9 @@
         android:layout_marginEnd="55dp"
         android:layout_marginRight="55dp"
         android:contentDescription="@string/home_image"
-        app:layout_constraintBottom_toBottomOf="@+id/camImg"
-        app:layout_constraintEnd_toStartOf="@+id/camImg"
-        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/captureImg"
+        app:layout_constraintEnd_toStartOf="@+id/captureImg"
+        app:layout_constraintTop_toBottomOf="@+id/view_finder"
         app:srcCompat="@drawable/ic_home" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -52,9 +53,9 @@
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:contentDescription="@string/checkmark_image"
-        app:layout_constraintBottom_toBottomOf="@+id/camImg"
-        app:layout_constraintStart_toEndOf="@+id/camImg"
-        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/captureImg"
+        app:layout_constraintStart_toEndOf="@+id/captureImg"
+        app:layout_constraintTop_toBottomOf="@+id/view_finder"
         app:srcCompat="@drawable/ic_check" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
