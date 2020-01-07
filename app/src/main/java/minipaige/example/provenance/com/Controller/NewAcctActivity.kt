@@ -12,8 +12,8 @@ class NewAcctActivity : MainActivity() {
         setContentView(R.layout.activity_new_acct)
 
         newAcctSbmtBtn.setOnClickListener {
-            val homeIntent = Intent(this, HomeActivity::class.java)
-            startActivity(homeIntent)
+            val homeActivity = Intent(this, HomeActivity::class.java)
+            startActivity(homeActivity)
         }
     }
 

@@ -12,13 +12,13 @@ class WelcomeActivity : MainActivity() {
         setContentView(R.layout.activity_welcome)
 
         logInBtn.setOnClickListener {
-            val homeIntent = Intent(this, HomeActivity::class.java)
-            startActivity(homeIntent)
+            val homeActivity = Intent(this, HomeActivity::class.java)
+            startActivity(homeActivity)
         }
 
         newAcctBtn.setOnClickListener {
-            val newAcctIntent = Intent(this, NewAcctActivity::class.java)
-            startActivity(newAcctIntent)
+            val newAcctActivity = Intent(this, NewAcctActivity::class.java)
+            startActivity(newAcctActivity)
         }
     }
 }

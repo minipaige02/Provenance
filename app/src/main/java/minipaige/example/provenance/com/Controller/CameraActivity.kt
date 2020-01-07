@@ -18,15 +18,15 @@ class CameraActivity : AppCompatActivity() {
         println(archivalItem.repository)
 
         homeImg.setOnClickListener{
-            val homeIntent = Intent(this, HomeActivity::class.java)
-            startActivity(homeIntent)
+            val homeActivity = Intent(this, HomeActivity::class.java)
+            startActivity(homeActivity)
         }
 
         checkImg.setOnClickListener{
             //TO DO create images
 
-            val viewAllIntent = Intent(this, ViewImagesActivity::class.java)
-            startActivity(viewAllIntent)
+            val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
+            startActivity(viewAllActivity)
         }
 
         camImg.setOnClickListener{

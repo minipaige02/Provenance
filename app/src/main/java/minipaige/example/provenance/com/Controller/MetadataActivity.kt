@@ -16,7 +16,7 @@ class MetadataActivity : MainActivity() {
         setContentView(R.layout.activity_metadata)
 
         metadataNextBtn.setOnClickListener {
-            // TO DO
+            // put in helper method?
             archivalItem.repository = repInput.text.toString()
             archivalItem.collection = colInput.text.toString()
             archivalItem.box = boxInput.text.toString()
@@ -33,6 +33,7 @@ class MetadataActivity : MainActivity() {
             } else if (archivalItem.box == "" && archivalItem.folder == "" && archivalItem.otherCntr == "") {
                 Toast.makeText(this, "Box, folder, or other container must be filled out.", Toast.LENGTH_LONG).show()
             } else {
+                // put in helper method?
                 repInput.text.clear()
                 colInput.text.clear()
                 boxInput.text.clear()

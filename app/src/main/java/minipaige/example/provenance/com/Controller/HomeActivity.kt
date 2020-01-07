@@ -12,13 +12,13 @@ class HomeActivity : MainActivity() {
         setContentView(R.layout.activity_home)
 
         addImgBtn.setOnClickListener {
-            val metadataIntent = Intent(this, MetadataActivity::class.java)
-            startActivity(metadataIntent)
+            val metadataActivity = Intent(this, MetadataActivity::class.java)
+            startActivity(metadataActivity)
         }
 
         viewImgBtn.setOnClickListener {
-            val viewAllIntent = Intent(this, ViewImagesActivity::class.java)
-            startActivity(viewAllIntent)
+            val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
+            startActivity(viewAllActivity)
         }
     }
 
