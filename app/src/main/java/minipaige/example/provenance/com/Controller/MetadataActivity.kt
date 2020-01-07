@@ -15,8 +15,8 @@ class MetadataActivity : MainActivity() {
             // TO DO
             val repository = repInput.text.toString()
             val collection = colInput.text.toString()
-            val box = boxInput.text.toString().toInt()
-            val folder = folderInput.text.toString().toInt()
+            val box = boxInput.text.toString()
+            val folder = folderInput.text.toString()
             val other = otherCntrInput.text.toString()
             val desc = cntrDescInput.text.toString()
             val tags = tagsInput.text.toString()

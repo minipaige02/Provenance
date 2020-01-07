@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/captureImgBtn"
+        android:id="@+id/addImgBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -40,15 +40,15 @@
         app:layout_constraintTop_toBottomOf="@+id/welcomeTxt" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/viewImgBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="#3F51B5"
         android:text="@string/view_images"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/captureImgBtn"
+        app:layout_constraintEnd_toEndOf="@+id/addImgBtn"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/captureImgBtn"
-        app:layout_constraintTop_toBottomOf="@+id/captureImgBtn" />
+        app:layout_constraintStart_toStartOf="@+id/addImgBtn"
+        app:layout_constraintTop_toBottomOf="@+id/addImgBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

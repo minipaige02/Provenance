@@ -11,9 +11,14 @@ class HomeActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        captureImgBtn.setOnClickListener {
+        addImgBtn.setOnClickListener {
             val metadataIntent = Intent(this, MetadataActivity::class.java)
             startActivity(metadataIntent)
+        }
+
+        viewImgBtn.setOnClickListener {
+            val viewAllIntent = Intent(this, ViewImagesActivity::class.java)
+            startActivity(viewAllIntent)
         }
     }
 

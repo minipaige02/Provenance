@@ -12,7 +12,7 @@ class CameraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
-        camImage.setOnClickListener{
+        homeImg.setOnClickListener{
             val homeIntent = Intent(this, HomeActivity::class.java)
             startActivity(homeIntent)
         }
@@ -20,9 +20,15 @@ class CameraActivity : AppCompatActivity() {
         checkImg.setOnClickListener{
             //TO DO create images
 
-            //val viewAllIntent = Intent(this, ViewImagesActivity::class.java)
-            //startActivity(viewAllIntent)
+            val viewAllIntent = Intent(this, ViewImagesActivity::class.java)
+            startActivity(viewAllIntent)
         }
+
+        camImg.setOnClickListener{
+            println("I'm taking photos!")
+        }
+
+
     }
 
 
