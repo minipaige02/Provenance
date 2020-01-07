@@ -8,19 +8,19 @@ import android.view.TextureView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import java.util.concurrent.TimeUnit
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Surface
 import android.view.ViewGroup
-import androidx.camera.core.CameraX
-import androidx.camera.core.Preview
-import androidx.camera.core.PreviewConfig
+import android.widget.ImageButton
+import androidx.camera.core.*
 import androidx.lifecycle.LifecycleOwner
 import kotlinx.android.synthetic.main.activity_camera.*
 import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
+import java.io.File
 import java.util.concurrent.Executors
 
 
@@ -52,7 +52,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             startActivity(viewAllActivity)
         }
 
-        captureImg.setOnClickListener{
+        capture_button.setOnClickListener{
 
         }
 
@@ -98,11 +98,47 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             updateTransform()
         }
 
+        // Create configuration object for the image capture use case
+        val imageCaptureConfig = ImageCaptureConfig.Builder()
+            .apply {
+                // We don't set a resolution for image capture; instead, we
+                // select a capture mode which will infer the appropriate
+                // resolution based on aspect ration and requested mode
+                setCaptureMode(ImageCapture.CaptureMode.MIN_LATENCY)
+            }.build()
+
+        // Build the image capture use case and attach button click listener
+        val imageCapture = ImageCapture(imageCaptureConfig)
+        findViewById<ImageButton>(R.id.capture_button).setOnClickListener {
+            val file = File(externalMediaDirs.first(),
+                "${System.currentTimeMillis()}.jpg")
+
+            imageCapture.takePicture(file, executor,
+                object : ImageCapture.OnImageSavedListener {
+                    override fun onError(
+                        imageCaptureError: ImageCapture.ImageCaptureError,
+                        message: String,
+                        exc: Throwable?
+                    ) {
+                        val msg = "Photo capture failed: $message"
+                        Log.e("CameraXApp", msg, exc)
+                        viewFinder.post {
+                            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onImageSaved(file: File) {
+                        val msg = "Photo capture succeeded: ${file.absolutePath}"
+                        Log.d("CameraXApp", msg)
+                        viewFinder.post {
+                            Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
+                        }
+                    }
+                })
+        }
+
         // Bind use cases to lifecycle
-        // If Android Studio complains about "this" being not a LifecycleOwner
-        // try rebuilding the project or updating the appcompat dependency to
-        // version 1.1.0 or higher.
-        CameraX.bindToLifecycle(this, preview)
+        CameraX.bindToLifecycle(this, preview, imageCapture)
     }
 
     private fun updateTransform() {
