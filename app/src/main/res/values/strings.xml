@@ -28,4 +28,6 @@
     <string name="camera_image">camera image</string>
     <string name="home_image">home image</string>
     <string name="checkmark_image">checkmark image</string>
+    <string name="upload_documents_button">upload documents button</string>
+    <string name="create_items">Create Items</string>
 </resources>

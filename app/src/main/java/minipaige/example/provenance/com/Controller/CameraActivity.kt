@@ -1,6 +1,7 @@
 package minipaige.example.provenance.com.Controller
 
 import android.Manifest
+import android.animation.ObjectAnimator
 import android.content.pm.PackageManager
 import android.util.Size
 import android.graphics.Matrix
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Surface
@@ -44,16 +46,11 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             startActivity(homeActivity)
         }
 
-        checkImg.setOnClickListener{
+        uploadBtn.setOnClickListener{
             //TO DO create images
-
 
             val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
             startActivity(viewAllActivity)
-        }
-
-        capture_button.setOnClickListener{
-
         }
 
         viewFinder = findViewById(R.id.view_finder)

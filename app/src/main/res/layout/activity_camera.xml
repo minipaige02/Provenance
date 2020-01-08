@@ -8,9 +8,9 @@
 
     <TextureView
         android:id="@+id/view_finder"
-        android:layout_gravity="center_horizontal"
         android:layout_width="414dp"
         android:layout_height="506dp"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,8 +19,11 @@
         android:id="@+id/capture_button"
         android:layout_width="72dp"
         android:layout_height="72dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="#00313131"
+        android:contentDescription="@string/camera_image"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,30 +33,36 @@
     <ImageView
         android:id="@+id/homeImg"
         android:layout_width="50dp"
-        android:layout_height="0dp"
+        android:layout_height="55dp"
         android:layout_marginEnd="55dp"
         android:contentDescription="@string/home_image"
-        app:layout_constraintBottom_toBottomOf="@+id/capture_button"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadBtn"
         app:layout_constraintEnd_toStartOf="@+id/capture_button"
-        app:layout_constraintTop_toBottomOf="@+id/view_finder"
+        app:layout_constraintTop_toTopOf="@+id/uploadBtn"
         app:srcCompat="@drawable/ic_home" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
     <ImageView
-        android:id="@+id/checkImg"
-        android:layout_width="50dp"
-        android:layout_height="77dp"
+        android:id="@+id/uploadBtn"
+        android:layout_width="53dp"
+        android:layout_height="55dp"
         android:layout_marginStart="55dp"
-        android:contentDescription="@string/checkmark_image"
-        app:layout_constraintBottom_toBottomOf="@+id/capture_button"
+        android:layout_marginTop="6dp"
+        android:contentDescription="@string/upload_documents_button"
         app:layout_constraintStart_toEndOf="@+id/capture_button"
-        app:layout_constraintTop_toBottomOf="@+id/view_finder"
-        app:srcCompat="@drawable/ic_check" />
+        app:layout_constraintTop_toTopOf="@+id/capture_button"
+        app:srcCompat="@drawable/ic_file_upload" />
+
+    <TextView
+        android:id="@+id/uploadTxt"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="@string/create_items"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/capture_button"
+        app:layout_constraintEnd_toEndOf="@+id/uploadBtn"
+        app:layout_constraintStart_toStartOf="@+id/uploadBtn"
+        app:layout_constraintTop_toBottomOf="@+id/uploadBtn"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
