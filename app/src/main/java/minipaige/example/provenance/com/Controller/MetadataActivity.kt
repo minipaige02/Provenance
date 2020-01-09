@@ -9,7 +9,7 @@ import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
 
 class MetadataActivity : MainActivity() {
-    var archivalItem = ArchivalItem("", "", "", "", "", "", "", "")
+    var archivalItem = ArchivalItem("", "", "", "", "", "", arrayListOf(), "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,15 @@ class MetadataActivity : MainActivity() {
             archivalItem.folder = folderInput.text.toString()
             archivalItem.otherCntr = otherCntrInput.text.toString()
             archivalItem.description = cntrDescInput.text.toString()
-            archivalItem.tags = tagsInput.text.toString()
+            val tags = tagsInput.text.toString().split("; ")
+            //iterate over tags to add each tag to archivalItem.tags array
+            //archivalItem.tags.add(tags.first())
+//
+//            for (tag in tags) {
+//                archivalItem.tags.add("hello")
+//            }
+            println(tags)
+
 
 
             if (archivalItem.repository == "" ) {

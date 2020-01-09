@@ -1,7 +1,6 @@
 package minipaige.example.provenance.com.Controller
 
 import android.Manifest
-import android.animation.ObjectAnimator
 import android.content.pm.PackageManager
 import android.util.Size
 import android.graphics.Matrix
@@ -10,19 +9,24 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.content.Intent
-import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Surface
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.camera.core.*
 import androidx.lifecycle.LifecycleOwner
+import com.google.android.gms.tasks.Continuation
+import com.google.android.gms.tasks.Task
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_camera.*
 import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
 import java.io.File
+import java.util.*
 import java.util.concurrent.Executors
 
 
@@ -30,16 +34,19 @@ private const val REQUEST_CODE_PERMISSIONS = 10
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
 
 class CameraActivity : MainActivity(), LifecycleOwner {
+    private var firebaseStore: FirebaseStorage? = null
+    private var storageReference: StorageReference? = null
 
     //View finder and capture functionality mainly taken from
-    // Google's CameraX Codelab: https://codelabs.developers.google.com/codelabs/camerax-getting-started/#0
-
+    // Google's CameraX Codelab: https://codelabs.developers.google.com/codelabs/camerax-getting-started/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
+        firebaseStore = FirebaseStorage.getInstance()
+        storageReference = FirebaseStorage.getInstance().reference
+
         val archivalItem = intent.getParcelableExtra<ArchivalItem>(EXTRA_ARCHVIAL_ITEM)
-        println(archivalItem.repository)
 
         homeImg.setOnClickListener{
             val homeActivity = Intent(this, HomeActivity::class.java)
@@ -74,6 +81,9 @@ class CameraActivity : MainActivity(), LifecycleOwner {
     private lateinit var viewFinder: TextureView
 
     private fun startCamera() {
+        val imageLinks = arrayListOf<String>()
+
+
         // Create configuration object for the viewfinder use case
         val previewConfig = PreviewConfig.Builder().apply {
             setTargetResolution(Size(640, 480))
@@ -106,7 +116,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
         // Build the image capture use case and attach button click listener
         val imageCapture = ImageCapture(imageCaptureConfig)
-        findViewById<ImageButton>(R.id.capture_button).setOnClickListener {
+        capture_button.setOnClickListener {
             val file = File(externalMediaDirs.first(),
                 "${System.currentTimeMillis()}.jpg")
 
@@ -125,11 +135,34 @@ class CameraActivity : MainActivity(), LifecycleOwner {
                     }
 
                     override fun onImageSaved(file: File) {
+                        val uri = Uri.fromFile(file)
+                        val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
+                        val uploadTask = ref?.putFile(uri)
+
+                        val urlTask = uploadTask?.continueWithTask { task ->
+                            if (!task.isSuccessful) {
+                                task.exception?.let {
+                                    throw it
+                                }
+                            }
+                            ref?.downloadUrl
+                        }?.addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                val downloadUri = task.result
+                                imageLinks.add(downloadUri.toString())
+                                println(imageLinks)
+                            } else {
+                                // Handle failures
+                                // ...
+                            }
+                        }
+
                         val msg = "Photo capture succeeded: ${file.absolutePath}"
                         Log.d("CameraXApp", msg)
                         viewFinder.post {
                             Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
                         }
+
                     }
                 })
         }
@@ -184,5 +217,34 @@ class CameraActivity : MainActivity(), LifecycleOwner {
         ContextCompat.checkSelfPermission(
             baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
+
+//    private fun uploadImage() {
+//        if(filePath != null){
+//            val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
+//            val uploadTask = ref?.putFile(filePath!!)
+//
+//            val urlTask = uploadTask?.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+//                if (!task.isSuccessful) {
+//                    task.exception?.let {
+//                        throw it
+//                    }
+//                }
+//                return@Continuation ref.downloadUrl
+//            })?.addOnCompleteListener { task ->
+//                if (task.isSuccessful) {
+//                    val downloadUri = task.result
+//                    println(downloadUri)
+////                    addUploadRecordToDb(downloadUri.toString())
+//                } else {
+//                    // Handle failures
+//                }
+//            }?.addOnFailureListener{
+//
+//            }
+//        }else{
+//            Toast.makeText(this, "File path is blank", Toast.LENGTH_SHORT).show()
+//        }
+//
+//    }
 
 }
