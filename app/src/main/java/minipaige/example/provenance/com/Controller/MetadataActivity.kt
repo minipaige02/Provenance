@@ -9,7 +9,7 @@ import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
 
 class MetadataActivity : MainActivity() {
-    var archivalItem = ArchivalItem("", "", "", "", "", "", arrayListOf(), "")
+    var archivalItem = ArchivalItem("", "", "", "", "", "", "", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

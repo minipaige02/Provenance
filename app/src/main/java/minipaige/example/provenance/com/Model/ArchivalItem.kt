@@ -10,7 +10,7 @@ class ArchivalItem(
     var folder: String?,
     var otherCntr: String?,
     var description: String?,
-    var tags: ArrayList<String>,
+    var tags: String?,
     var image: String?
 ) : Parcelable {
 
@@ -21,7 +21,7 @@ class ArchivalItem(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readArrayList(ClassLoader.getSystemClassLoader()) as ArrayList<String>,
+        parcel.readString(),
         parcel.readString()) {
     }
 
@@ -32,7 +32,7 @@ class ArchivalItem(
         parcel.writeString(folder)
         parcel.writeString(otherCntr)
         parcel.writeString(description)
-        parcel.writeStringList(tags)
+        parcel.writeString(tags)
         parcel.writeString(image)
     }
 

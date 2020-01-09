@@ -18,6 +18,7 @@ import androidx.camera.core.*
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -25,6 +26,7 @@ import kotlinx.android.synthetic.main.activity_camera.*
 import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
+import minipaige.example.provenance.com.Utilities.USERNAME
 import java.io.File
 import java.util.*
 import java.util.concurrent.Executors
@@ -36,6 +38,7 @@ private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
 class CameraActivity : MainActivity(), LifecycleOwner {
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
+    var imageLinks = arrayListOf<String>()
 
     //View finder and capture functionality mainly taken from
     // Google's CameraX Codelab: https://codelabs.developers.google.com/codelabs/camerax-getting-started/
@@ -55,9 +58,14 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
         uploadBtn.setOnClickListener{
             //TO DO create images
+            if (imageLinks.isEmpty()) {
+                Toast.makeText(this, "No images to be upload.", Toast.LENGTH_SHORT).show()
+            } else {
+                writeToDatabase(archivalItem)
 
-            val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
-            startActivity(viewAllActivity)
+                val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
+                startActivity(viewAllActivity)
+            }
         }
 
         viewFinder = findViewById(R.id.view_finder)
@@ -81,8 +89,6 @@ class CameraActivity : MainActivity(), LifecycleOwner {
     private lateinit var viewFinder: TextureView
 
     private fun startCamera() {
-        val imageLinks = arrayListOf<String>()
-
 
         // Create configuration object for the viewfinder use case
         val previewConfig = PreviewConfig.Builder().apply {
@@ -150,7 +156,6 @@ class CameraActivity : MainActivity(), LifecycleOwner {
                             if (task.isSuccessful) {
                                 val downloadUri = task.result
                                 imageLinks.add(downloadUri.toString())
-                                println(imageLinks)
                             } else {
                                 // Handle failures
                                 // ...
@@ -218,33 +223,19 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
-//    private fun uploadImage() {
-//        if(filePath != null){
-//            val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
-//            val uploadTask = ref?.putFile(filePath!!)
-//
-//            val urlTask = uploadTask?.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
-//                if (!task.isSuccessful) {
-//                    task.exception?.let {
-//                        throw it
-//                    }
-//                }
-//                return@Continuation ref.downloadUrl
-//            })?.addOnCompleteListener { task ->
-//                if (task.isSuccessful) {
-//                    val downloadUri = task.result
-//                    println(downloadUri)
-////                    addUploadRecordToDb(downloadUri.toString())
-//                } else {
-//                    // Handle failures
-//                }
-//            }?.addOnFailureListener{
-//
-//            }
-//        }else{
-//            Toast.makeText(this, "File path is blank", Toast.LENGTH_SHORT).show()
-//        }
-//
-//    }
+    private fun writeToDatabase(archivalItem: ArchivalItem) {
+        val databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
+
+        for (link in imageLinks) {
+            val newDatabaseRef = databaseRef.push()
+            archivalItem.image = link
+            newDatabaseRef.setValue(archivalItem)
+        }
+
+        imageLinks = arrayListOf<String>()
+        val msg = "${imageLinks.size} images uploaded."
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+
+    }
 
 }
