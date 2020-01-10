@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.ViewImagesActivity"></activity>
         <activity android:name=".Controller.NewAcctActivity" />
         <activity
             android:name=".Controller.CameraActivity"

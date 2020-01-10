@@ -16,12 +16,9 @@ import android.view.Surface
 import android.view.ViewGroup
 import androidx.camera.core.*
 import androidx.lifecycle.LifecycleOwner
-import com.google.android.gms.tasks.Continuation
-import com.google.android.gms.tasks.Task
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_camera.*
 import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.R
@@ -51,7 +48,8 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
         val archivalItem = intent.getParcelableExtra<ArchivalItem>(EXTRA_ARCHVIAL_ITEM)
 
-        homeImg.setOnClickListener{
+        cancelBtn.setOnClickListener{
+            Toast.makeText(this, "No images uploaded.", Toast.LENGTH_SHORT).show()
             val homeActivity = Intent(this, HomeActivity::class.java)
             startActivity(homeActivity)
         }
@@ -63,8 +61,8 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             } else {
                 writeToDatabase(archivalItem)
 
-                val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
-                startActivity(viewAllActivity)
+                val homeActivity = Intent(this, HomeActivity::class.java)
+                startActivity(homeActivity)
             }
         }
 
@@ -165,7 +163,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
                         val msg = "Photo capture succeeded: ${file.absolutePath}"
                         Log.d("CameraXApp", msg)
                         viewFinder.post {
-                            Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
+                            Toast.makeText(baseContext, "Document captured", Toast.LENGTH_SHORT).show()
                         }
 
                     }

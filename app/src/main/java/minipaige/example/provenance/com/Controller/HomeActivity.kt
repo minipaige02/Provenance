@@ -18,11 +18,6 @@ class HomeActivity : MainActivity() {
             val metadataActivity = Intent(this, MetadataActivity::class.java)
             startActivity(metadataActivity)
         }
-
-        viewImgBtn.setOnClickListener {
-            val viewAllActivity = Intent(this, ViewImagesActivity::class.java)
-            startActivity(viewAllActivity)
-        }
     }
 
 }
