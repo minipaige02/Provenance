@@ -25,6 +25,17 @@ class ArchivalItem(
         parcel.readString()) {
     }
 
+    constructor() : this(
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    )
+
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(repository)
         parcel.writeString(collection)
