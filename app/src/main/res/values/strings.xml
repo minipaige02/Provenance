@@ -30,4 +30,5 @@
     <string name="create_items">Create Items</string>
     <string name="your_documents">Your documents</string>
     <string name="upload">Upload</string>
+    <string name="archival_document_image">archival document image</string>
 </resources>

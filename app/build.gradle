@@ -45,6 +45,11 @@ dependencies {
     def camerax_version = '1.0.0-alpha06'
     implementation "androidx.camera:camera-core:${camerax_version}"
     implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    //Picasso
+    def picassoVersion = "2.71828"
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
 }
 
 apply plugin: 'com.google.gms.google-services'
