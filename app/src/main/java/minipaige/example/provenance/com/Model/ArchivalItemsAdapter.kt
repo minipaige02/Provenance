@@ -29,7 +29,7 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
 
         fun setData(item: ArchivalItem?, post: Int) {
             val picasso = Picasso.get()
-            picasso.load(item!!.image).into(itemView.itemImage)
+            picasso.load(item!!.image).rotate(90F).into(itemView.itemImage)
 
             itemView.collection.text = item!!.collection
 

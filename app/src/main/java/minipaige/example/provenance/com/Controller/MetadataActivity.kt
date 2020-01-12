@@ -30,7 +30,6 @@ class MetadataActivity : MainActivity() {
 //            for (tag in tags) {
 //                archivalItem.tags.add("hello")
 //            }
-            println(tags)
 
 
 

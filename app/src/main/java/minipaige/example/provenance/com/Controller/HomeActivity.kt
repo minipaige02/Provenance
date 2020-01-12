@@ -14,7 +14,6 @@ import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.USERNAME
 
 class HomeActivity : MainActivity() {
-//    var testList: ArrayList<ArchivalItem> = ArrayList()
 
 //    lateinit var itemList: ArrayList<ArchivalItem>
 
@@ -29,13 +28,11 @@ class HomeActivity : MainActivity() {
         val layoutManager = GridLayoutManager(this, 3)
         recyclerView.layoutManager = layoutManager
 
+        //TODO: replace testList with data from database call
         val adapter = ArchivalItemsAdapter(this, ArchivalItems.testList)
         recyclerView.adapter = adapter
 
 
-//        createTestList()
-//        println(testList)
-//
 //        databaseRef.addValueEventListener(object : ValueEventListener {
 //            override fun onDataChange(dataSnapshot: DataSnapshot) {
 //                // This method is called once with the initial value and again
@@ -63,12 +60,5 @@ class HomeActivity : MainActivity() {
 //            startActivity(metadataActivity)
 //        }
     }
-
-//    fun createTestList() {
-//        val newItem = ArchivalItem("Hoover", "Gahagan papers", "7", "", "", "", "", "https://firebasestorage.googleapis.com/v0/b/provenance-6fca1.appspot.com/o/uploads%2F96be606a-1695-4522-86c3-9ff945bc1196?alt=media&token=55b52c9a-d152-438f-9a58-8f7eddcd1e73")
-//        val newItem2 = ArchivalItem("UC Berkeley", "Wolfe papers", "9", "10", "", "a sample description", "", "https://firebasestorage.googleapis.com/v0/b/provenance-6fca1.appspot.com/o/uploads%2Fe3c39ad2-3d87-4c52-95b5-8b7e896cc127?alt=media&token=fa4c9218-c392-4111-8ad3-b28de9d68256")
-//        testList.add(newItem)
-//        testList.add(newItem2)
-//    }
 
 }
