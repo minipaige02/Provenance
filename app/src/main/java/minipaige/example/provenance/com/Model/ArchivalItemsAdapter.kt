@@ -23,6 +23,7 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = archivalItems[position]
         holder.setData(item, position)
+//        holder.
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
