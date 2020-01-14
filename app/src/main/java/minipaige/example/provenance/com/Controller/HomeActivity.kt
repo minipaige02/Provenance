@@ -25,6 +25,7 @@ class HomeActivity : MainActivity() {
 
         welcomeTxt.text = "Welcome, ${USERNAME}!"
 
+        //Set recyclerview
         val layoutManager = GridLayoutManager(this, 3)
         recyclerView.layoutManager = layoutManager
 

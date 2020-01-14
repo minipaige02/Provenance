@@ -32,4 +32,11 @@
     <string name="upload">Upload</string>
     <string name="archival_document_image">archival document image</string>
     <string name="edit_pencil_icon">edit pencil icon</string>
+    <string name="details">Details</string>
+    <string name="repository">Repository:</string>
+    <string name="collection">Collection:</string>
+    <string name="located_in">Located in:</string>
+    <string name="description">Description:</string>
+    <string name="citation">Citation:</string>
+    <string name="tags2">Tags:</string>
 </resources>
