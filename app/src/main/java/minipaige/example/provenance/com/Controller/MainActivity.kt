@@ -41,4 +41,8 @@ open class MainActivity : AppCompatActivity() {
         Log.d(TAG, "${javaClass.simpleName} OnDestroy")
         super.onDestroy()
     }
+
+    companion object {
+        var username = ""
+    }
 }

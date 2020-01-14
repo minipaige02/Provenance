@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.activity_home.*
 import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.Model.ArchivalItemsAdapter
 import minipaige.example.provenance.com.R
-import minipaige.example.provenance.com.Utilities.USERNAME
 
 class HomeActivity : MainActivity() {
     lateinit var databaseRef: DatabaseReference
@@ -20,10 +19,10 @@ class HomeActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        welcomeTxt.text = "Welcome, ${USERNAME}!"
+        welcomeTxt.text = "Welcome, ${username}!"
 
         archivalItemsList = mutableListOf()
-        databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
+        databaseRef = FirebaseDatabase.getInstance().getReference(username)
 
         databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -52,9 +51,6 @@ class HomeActivity : MainActivity() {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
         })
-
-
-
 
         addImgBtn.setOnClickListener {
             val metadataActivity = Intent(this, MetadataActivity::class.java)

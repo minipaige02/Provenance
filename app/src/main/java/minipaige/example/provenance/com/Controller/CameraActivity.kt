@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.activity_camera.*
 import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
-import minipaige.example.provenance.com.Utilities.USERNAME
 import java.io.File
 import java.util.*
 import java.util.concurrent.Executors
@@ -222,7 +221,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
     }
 
     private fun writeToDatabase(archivalItem: ArchivalItem) {
-        val databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
+        val databaseRef = FirebaseDatabase.getInstance().getReference(username)
         val imageCount = imageLinks.size
 
         for (link in imageLinks) {

@@ -2,6 +2,7 @@ package minipaige.example.provenance.com.Controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_welcome.*
 import minipaige.example.provenance.com.R
 
@@ -12,8 +13,15 @@ class WelcomeActivity : MainActivity() {
         setContentView(R.layout.activity_welcome)
 
         logInBtn.setOnClickListener {
-            val homeActivity = Intent(this, HomeActivity::class.java)
-            startActivity(homeActivity)
+            username = usrNmInput.text.toString()
+
+            if (username != "") {
+                val homeActivity = Intent(this, HomeActivity::class.java)
+                startActivity(homeActivity)
+            } else {
+                Toast.makeText(this, "Please enter a valid username.", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         newAcctBtn.setOnClickListener {
