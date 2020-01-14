@@ -223,6 +223,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
     private fun writeToDatabase(archivalItem: ArchivalItem) {
         val databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
+        val imageCount = imageLinks.size
 
         for (link in imageLinks) {
             val newDatabaseRef = databaseRef.push()
@@ -232,8 +233,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             newDatabaseRef.setValue(archivalItem)
         }
 
-        imageLinks = arrayListOf<String>()
-        val msg = "${imageLinks.size} images uploaded."
+        val msg = "$imageCount images uploaded."
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 
     }

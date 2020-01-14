@@ -16,6 +16,7 @@ class MetadataActivity : MainActivity() {
         setContentView(R.layout.activity_metadata)
 
         metadataNextBtn.setOnClickListener {
+            //TODO: convert tags to array here
             // put in helper method?
             archivalItem.repository = repInput.text.toString()
             archivalItem.collection = colInput.text.toString()
@@ -23,13 +24,7 @@ class MetadataActivity : MainActivity() {
             archivalItem.folder = folderInput.text.toString()
             archivalItem.otherCntr = otherCntrInput.text.toString()
             archivalItem.description = cntrDescInput.text.toString()
-            val tags = tagsInput.text.toString().split("; ")
-            //iterate over tags to add each tag to archivalItem.tags array
-            //archivalItem.tags.add(tags.first())
-//
-//            for (tag in tags) {
-//                archivalItem.tags.add("hello")
-//            }
+            archivalItem.tags = tagsInput.text.toString()
 
 
 
@@ -40,7 +35,7 @@ class MetadataActivity : MainActivity() {
             } else if (archivalItem.box == "" && archivalItem.folder == "" && archivalItem.otherCntr == "") {
                 Toast.makeText(this, "Box, folder, or other container must be filled out.", Toast.LENGTH_LONG).show()
             } else {
-                // put in helper method?
+                // TODO: put in helper method?
                 repInput.text.clear()
                 colInput.text.clear()
                 boxInput.text.clear()
