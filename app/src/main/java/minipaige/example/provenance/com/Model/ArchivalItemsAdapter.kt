@@ -1,12 +1,10 @@
 package minipaige.example.provenance.com.Model
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.archival_item.view.*
@@ -50,10 +48,7 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
             }
 
             itemView.relLayout.setOnClickListener{
-                println("${item.collection} is being clicked")
-
                 val itemDetailActivity = Intent(context, ItemDetailActivity::class.java)
-
                 itemDetailActivity.putExtra(EXTRA_ARCHVIAL_ITEM, item)
                 context.startActivity(itemDetailActivity)
             }

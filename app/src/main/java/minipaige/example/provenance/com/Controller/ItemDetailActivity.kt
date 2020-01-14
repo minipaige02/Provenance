@@ -33,8 +33,9 @@ class ItemDetailActivity : MainActivity() {
                 container = archivalItem.otherCntr!!
             }
             cntrDTxt.text = container
+            descDTxt.text = archivalItem.description
             tagsDTxt.text = archivalItem.tags
-            citationTxt.text = "Citation: [Description of document]. [Date]. ${container}. ${archivalItem.collection}. ${archivalItem.repository}."
+            citationTxt.text = "[Description of document]. [Date]. ${container}. ${archivalItem.collection}. ${archivalItem.repository}."
         }
 
         editBtn.setOnClickListener{

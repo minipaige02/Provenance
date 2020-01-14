@@ -3,19 +3,18 @@ package minipaige.example.provenance.com.Controller
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
 import minipaige.example.provenance.com.Model.ArchivalItem
-import minipaige.example.provenance.com.Model.ArchivalItems
 import minipaige.example.provenance.com.Model.ArchivalItemsAdapter
 import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.USERNAME
 
 class HomeActivity : MainActivity() {
-
-//    lateinit var itemList: ArrayList<ArchivalItem>
+    lateinit var databaseRef: DatabaseReference
+    lateinit var archivalItemsList: MutableList<ArchivalItem>
+    lateinit var layoutManager: GridLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,36 +22,39 @@ class HomeActivity : MainActivity() {
 
         welcomeTxt.text = "Welcome, ${USERNAME}!"
 
-        //Sets recyclerview
-        val layoutManager = GridLayoutManager(this, 3)
-        recyclerView.layoutManager = layoutManager
+        archivalItemsList = mutableListOf()
+        databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
 
-        //TODO: replace testList with data from database call
-        val databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
-        println(databaseRef)
-        val adapter = ArchivalItemsAdapter(this, ArchivalItems.testList)
-        recyclerView.adapter = adapter
+        databaseRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-//        databaseRef.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                // This method is called once with the initial value and again
-//                // whenever data at this location is updated.
-//                var t: GenericTypeIndicator<Map<String, ArchivalItem>> = object: GenericTypeIndicator<Map<String, ArchivalItem>>() {}
-//
-//                val value: Map<String, ArchivalItem>? = dataSnapshot.getValue(t)
+                if (dataSnapshot!!.exists()) {
+                    archivalItemsList.clear()
+                    for(item in dataSnapshot.children){
+                        val archivalItem = item.getValue(ArchivalItem::class.java)
+                        archivalItemsList.add(archivalItem!!)
+
+                        layoutManager = GridLayoutManager(this@HomeActivity, 3)
+                        recyclerView.layoutManager = layoutManager
+
+                        val adapter = ArchivalItemsAdapter(this@HomeActivity, archivalItemsList)
+                        recyclerView.adapter = adapter
+                    }
+                } else {
+                    println("No items added yet")
+                }
+
 //                Log.d(TAG, "Database value is: $value")
-//
-//
-//                itemList = ArrayList(value?.values!!)
-//
-//                println(itemList)
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                // Failed to read value
-//                Log.w(TAG, "Failed to read value.", error.toException())
-//            }
-//        })
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+
+
 
         addImgBtn.setOnClickListener {
             val metadataActivity = Intent(this, MetadataActivity::class.java)
