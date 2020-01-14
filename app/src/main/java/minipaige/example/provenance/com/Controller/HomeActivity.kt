@@ -20,19 +20,18 @@ class HomeActivity : MainActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
-        println(databaseRef)
 
         welcomeTxt.text = "Welcome, ${USERNAME}!"
 
-        //Set recyclerview
+        //Sets recyclerview
         val layoutManager = GridLayoutManager(this, 3)
         recyclerView.layoutManager = layoutManager
 
         //TODO: replace testList with data from database call
+        val databaseRef = FirebaseDatabase.getInstance().getReference(USERNAME)
+        println(databaseRef)
         val adapter = ArchivalItemsAdapter(this, ArchivalItems.testList)
         recyclerView.adapter = adapter
-
 
 //        databaseRef.addValueEventListener(object : ValueEventListener {
 //            override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -55,11 +54,10 @@ class HomeActivity : MainActivity() {
 //            }
 //        })
 
-//
-//        addImgBtn.setOnClickListener {
-//            val metadataActivity = Intent(this, MetadataActivity::class.java)
-//            startActivity(metadataActivity)
-//        }
+        addImgBtn.setOnClickListener {
+            val metadataActivity = Intent(this, MetadataActivity::class.java)
+            startActivity(metadataActivity)
+        }
     }
 
 }

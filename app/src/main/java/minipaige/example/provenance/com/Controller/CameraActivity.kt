@@ -226,7 +226,9 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
         for (link in imageLinks) {
             val newDatabaseRef = databaseRef.push()
+            val key = newDatabaseRef.key
             archivalItem.image = link
+            archivalItem.id = key
             newDatabaseRef.setValue(archivalItem)
         }
 
