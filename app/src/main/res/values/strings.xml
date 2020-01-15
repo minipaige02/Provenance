@@ -39,4 +39,9 @@
     <string name="description">Description:</string>
     <string name="citation">Citation:</string>
     <string name="tags2">Tags:</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="box2">Box:</string>
+    <string name="folder2">Folder:</string>
+    <string name="other_container">Other container:</string>
+    <string name="update">Update</string>
 </resources>

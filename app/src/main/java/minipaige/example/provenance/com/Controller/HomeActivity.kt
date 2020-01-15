@@ -32,13 +32,14 @@ class HomeActivity : MainActivity() {
                     for(item in dataSnapshot.children){
                         val archivalItem = item.getValue(ArchivalItem::class.java)
                         archivalItemsList.add(archivalItem!!)
-
-                        layoutManager = GridLayoutManager(this@HomeActivity, 3)
-                        recyclerView.layoutManager = layoutManager
-
-                        val adapter = ArchivalItemsAdapter(this@HomeActivity, archivalItemsList)
-                        recyclerView.adapter = adapter
                     }
+                    archivalItemsList = archivalItemsList.asReversed()
+
+                    layoutManager = GridLayoutManager(this@HomeActivity, 3)
+                    recyclerView.layoutManager = layoutManager
+
+                    val adapter = ArchivalItemsAdapter(this@HomeActivity, archivalItemsList)
+                    recyclerView.adapter = adapter
                 } else {
                     println("No items added yet")
                 }

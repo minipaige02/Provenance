@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".Controller.UpdateActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageU"
+            android:layout_width="183dp"
+            android:layout_height="183dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/archival_document_image"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/poe_sketch" />
+
+        <TextView
+            android:id="@+id/repULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/repository"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/repUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageU" />
+
+        <EditText
+            android:id="@+id/repUTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hoover_institution_library_archives"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/repULabel"
+            app:layout_constraintTop_toBottomOf="@+id/imageU"
+            tools:text="Harry Ransom Center" />
+
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="240dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:text="@string/update"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tagsUTxt" />
+
+        <TextView
+            android:id="@+id/tagsULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/tags2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tagsUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descUTxt" />
+
+        <EditText
+            android:id="@+id/tagsUTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/frida_portraits_biography_project"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tagsULabel"
+            app:layout_constraintTop_toBottomOf="@+id/descUTxt"
+            tools:text="Poe; art; bio project; more things" />
+
+        <TextView
+            android:id="@+id/descULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/description"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/descUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/descUTxt" />
+
+        <EditText
+            android:id="@+id/descUTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/_12_prints_of_frida_kahlo"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/descULabel"
+            app:layout_constraintTop_toBottomOf="@+id/otherCntrUTxt"
+            tools:text="Images of Poe's manuscripts, letters..." />
+
+        <TextView
+            android:id="@+id/otherCntrULabel"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/other_container"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/otherCntrUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/folderUTxt" />
+
+        <EditText
+            android:id="@+id/otherCntrUTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/envelope_m"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/otherCntrULabel"
+            app:layout_constraintTop_toBottomOf="@+id/folderUTxt"
+            tools:text="Flat file 20" />
+
+        <TextView
+            android:id="@+id/folderULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/folder2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/folderUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/boxUTxt" />
+
+        <EditText
+            android:id="@+id/folderUTxt"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/_55"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.162"
+            app:layout_constraintStart_toEndOf="@+id/folderULabel"
+            app:layout_constraintTop_toBottomOf="@+id/boxUTxt"
+            tools:text="17" />
+
+        <TextView
+            android:id="@+id/boxULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/box2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/boxUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colUTxt" />
+
+        <EditText
+            android:id="@+id/boxUTxt"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/_12"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toEndOf="@+id/boxULabel"
+            app:layout_constraintTop_toBottomOf="@+id/colUTxt"
+            tools:text="426" />
+
+        <TextView
+            android:id="@+id/colULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/collection"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/colUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repUTxt" />
+
+        <EditText
+            android:id="@+id/colUTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/bertram_david_wolfe_papers"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/colULabel"
+            app:layout_constraintTop_toBottomOf="@+id/repUTxt"
+            tools:text="Edgar Allan Poe Art Collection" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            app:backgroundTint="?android:attr/colorButtonNormal"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_cancel"
+            android:focusable="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

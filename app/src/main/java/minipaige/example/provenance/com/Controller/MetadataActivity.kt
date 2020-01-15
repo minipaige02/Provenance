@@ -18,13 +18,13 @@ class MetadataActivity : MainActivity() {
         metadataNextBtn.setOnClickListener {
             //TODO: convert tags to array here
             // put in helper method?
-            archivalItem.repository = repInput.text.toString()
-            archivalItem.collection = colInput.text.toString()
-            archivalItem.box = boxInput.text.toString()
-            archivalItem.folder = folderInput.text.toString()
-            archivalItem.otherCntr = otherCntrInput.text.toString()
-            archivalItem.description = cntrDescInput.text.toString()
-            archivalItem.tags = tagsInput.text.toString()
+            archivalItem.repository = repInput.text.toString().trim()
+            archivalItem.collection = colInput.text.toString().trim()
+            archivalItem.box = boxInput.text.toString().trim()
+            archivalItem.folder = folderInput.text.toString().trim()
+            archivalItem.otherCntr = otherCntrInput.text.toString().trim()
+            archivalItem.description = cntrDescInput.text.toString().trim()
+            archivalItem.tags = tagsInput.text.toString().trim()
 
 
 

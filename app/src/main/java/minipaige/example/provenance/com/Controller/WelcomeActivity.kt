@@ -13,7 +13,7 @@ class WelcomeActivity : MainActivity() {
         setContentView(R.layout.activity_welcome)
 
         logInBtn.setOnClickListener {
-            username = usrNmInput.text.toString()
+            username = usrNmInput.text.toString().trim()
 
             if (username != "") {
                 val homeActivity = Intent(this, HomeActivity::class.java)
