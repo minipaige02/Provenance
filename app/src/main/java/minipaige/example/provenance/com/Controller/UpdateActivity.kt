@@ -48,7 +48,7 @@ class UpdateActivity : MainActivity() {
         }
     }
 
-    fun saveItem(): Boolean {
+    private fun saveItem(): Boolean {
         val databaseRef = FirebaseDatabase.getInstance().getReference(username)
 
         val repository = repUTxt.text.toString().trim()
