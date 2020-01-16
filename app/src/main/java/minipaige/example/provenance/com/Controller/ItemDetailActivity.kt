@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_item_detail.*
 import kotlinx.android.synthetic.main.activity_item_detail.imageD
@@ -55,15 +56,22 @@ class ItemDetailActivity : MainActivity() {
         }
 
         deleteBtn.setOnClickListener{
+            //Removes item from Realitime Database
             val databaseRef = FirebaseDatabase.getInstance().getReference(username)
             val itemRef = databaseRef.child(archivalItem.id!!)
             itemRef.removeValue()
-            //add remove from cloud
 
-            Toast.makeText(this, "Item removed successfully.", Toast.LENGTH_SHORT).show()
+            //TODO: change so only runs if Realtime removal is successfull
+            val imageRef = FirebaseStorage.getInstance().getReferenceFromUrl(archivalItem.image!!)
+            imageRef.delete().addOnSuccessListener {
+                //code when file deleted
+                Toast.makeText(this, "Item removed successfully.", Toast.LENGTH_SHORT).show()
 
-            val homeActivity = Intent(this, HomeActivity::class.java)
-            startActivity(homeActivity)
+                val homeActivity = Intent(this, HomeActivity::class.java)
+                startActivity(homeActivity)
+            }.addOnFailureListener {
+                //code when file failed to delete
+            }
         }
     }
 }
