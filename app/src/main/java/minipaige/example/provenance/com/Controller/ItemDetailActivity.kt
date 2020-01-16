@@ -2,6 +2,8 @@ package minipaige.example.provenance.com.Controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_item_detail.*
 import kotlinx.android.synthetic.main.activity_item_detail.imageD
@@ -48,6 +50,18 @@ class ItemDetailActivity : MainActivity() {
         }
 
         closeBtn.setOnClickListener {
+            val homeActivity = Intent(this, HomeActivity::class.java)
+            startActivity(homeActivity)
+        }
+
+        deleteBtn.setOnClickListener{
+            val databaseRef = FirebaseDatabase.getInstance().getReference(username)
+            val itemRef = databaseRef.child(archivalItem.id!!)
+            itemRef.removeValue()
+            //add remove from cloud
+
+            Toast.makeText(this, "Item removed successfully.", Toast.LENGTH_SHORT).show()
+
             val homeActivity = Intent(this, HomeActivity::class.java)
             startActivity(homeActivity)
         }
