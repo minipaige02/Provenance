@@ -56,22 +56,27 @@ class ItemDetailActivity : MainActivity() {
         }
 
         deleteBtn.setOnClickListener{
-            //Removes item from Realitime Database
-            val databaseRef = FirebaseDatabase.getInstance().getReference(username)
-            val itemRef = databaseRef.child(archivalItem.id!!)
-            itemRef.removeValue()
+            deleteItem()
+        }
+    }
 
-            //TODO: change so only runs if Realtime removal is successfull
+    private fun deleteItem() {
+        val databaseRef = FirebaseDatabase.getInstance().getReference(username)
+        val itemRef = databaseRef.child(archivalItem.id!!)
+
+        itemRef.removeValue().addOnSuccessListener {
             val imageRef = FirebaseStorage.getInstance().getReferenceFromUrl(archivalItem.image!!)
             imageRef.delete().addOnSuccessListener {
-                //code when file deleted
                 Toast.makeText(this, "Item removed successfully.", Toast.LENGTH_SHORT).show()
 
                 val homeActivity = Intent(this, HomeActivity::class.java)
                 startActivity(homeActivity)
+
             }.addOnFailureListener {
-                //code when file failed to delete
+                Toast.makeText(this, "Image file could not be deleted.", Toast.LENGTH_SHORT).show()
             }
+        }.addOnFailureListener {
+            Toast.makeText(this, "Item could not be deleted.", Toast.LENGTH_SHORT).show()
         }
     }
 }
