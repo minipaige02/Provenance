@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.WelcomeActivity">
+    tools:context=".Controller.LoginActivity">
 
     <TextView
         android:id="@+id/appHead"
@@ -22,73 +22,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/usrNmTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/abhaya_libre_bold"
-        android:text="@string/username"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/appHead"
-        app:layout_constraintTop_toBottomOf="@+id/appHead" />
-
-    <EditText
-        android:id="@+id/usrNmInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/usrNmTxt"
-        app:layout_constraintTop_toBottomOf="@+id/usrNmTxt" />
-
-    <TextView
-        android:id="@+id/pwdTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/abhaya_libre_bold"
-        android:text="@string/password"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/usrNmInput"
-        app:layout_constraintTop_toBottomOf="@+id/usrNmInput" />
-
-    <EditText
-        android:id="@+id/pwdInput"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signInBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/pwdTxt"
-        app:layout_constraintTop_toBottomOf="@+id/pwdTxt" />
-
-    <Button
-        android:id="@+id/logInBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:text="@string/log_in"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="@+id/pwdInput"
-        app:layout_constraintTop_toBottomOf="@+id/pwdInput" />
-
-    <Button
-        android:id="@+id/newAcctBtn"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="80dp"
-        android:background="#3F51B5"
-        android:text="@string/create_account"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/pwdInput"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/logInBtn"
-        app:layout_constraintTop_toBottomOf="@+id/logInBtn" />
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appHead" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

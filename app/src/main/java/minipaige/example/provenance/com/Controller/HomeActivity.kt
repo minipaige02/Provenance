@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.view.marginTop
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
 import minipaige.example.provenance.com.Model.ArchivalItem

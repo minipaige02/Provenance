@@ -23,28 +23,26 @@ class ItemDetailActivity : MainActivity() {
 
         archivalItem = intent.getParcelableExtra<ArchivalItem>(EXTRA_ARCHVIAL_ITEM)
 
-        if (archivalItem != null) {
-            lateinit var container: String
+        lateinit var container: String
 
-            val picasso = Picasso.get()
-            picasso.load(archivalItem!!.image).rotate(90F).into(imageD)
+        val picasso = Picasso.get()
+        picasso.load(archivalItem.image).rotate(90F).into(imageD)
 
-            repDTxt.text = archivalItem.repository
-            colDTxt.text = archivalItem.collection
-            if (archivalItem.box != "" && archivalItem.folder != "") {
-                container = "Box ${archivalItem.box}, Folder ${archivalItem.folder}"
-            } else if (archivalItem.box != "") {
-                container = "Box ${archivalItem.box}"
-            } else if (archivalItem.folder != "") {
-                container = "Folder ${archivalItem.folder}"
-            } else {
-                container = archivalItem.otherCntr!!
-            }
-            cntrDTxt.text = container
-            descDTxt.text = archivalItem.description
-            tagsDTxt.text = archivalItem.tags
-            citationTxt.text = "[Description of document]. [Date]. ${container}. ${archivalItem.collection}. ${archivalItem.repository}."
+        repDTxt.text = archivalItem.repository
+        colDTxt.text = archivalItem.collection
+        if (archivalItem.box != "" && archivalItem.folder != "") {
+            container = "Box ${archivalItem.box}, Folder ${archivalItem.folder}"
+        } else if (archivalItem.box != "") {
+            container = "Box ${archivalItem.box}"
+        } else if (archivalItem.folder != "") {
+            container = "Folder ${archivalItem.folder}"
+        } else {
+            container = archivalItem.otherCntr!!
         }
+        cntrDTxt.text = container
+        descDTxt.text = archivalItem.description
+        tagsDTxt.text = archivalItem.tags
+        citationTxt.text = "[Description of document]. [Date]. ${container}. ${archivalItem.collection}. ${archivalItem.repository}."
 
         editBtn.setOnClickListener{
             val updateActivity = Intent(this, UpdateActivity::class.java)
