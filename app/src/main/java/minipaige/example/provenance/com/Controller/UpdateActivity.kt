@@ -1,5 +1,7 @@
 package minipaige.example.provenance.com.Controller
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -40,11 +42,17 @@ class UpdateActivity : MainActivity() {
         }
 
         closeBtn.setOnClickListener{
-            //code to go back to detail veiw without saving
-            //add dialog?
-            val itemDetailActivity = Intent(this, ItemDetailActivity::class.java)
-            itemDetailActivity.putExtra(EXTRA_ARCHVIAL_ITEM, archivalItem)
-            startActivity(itemDetailActivity)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Are you sure you want to exit?")
+            builder.setMessage("Any changes you have made will be lost. Are you sure you want to proceed?")
+            builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+                val itemDetailActivity = Intent(this, ItemDetailActivity::class.java)
+                itemDetailActivity.putExtra(EXTRA_ARCHVIAL_ITEM, archivalItem)
+                startActivity(itemDetailActivity)
+            }
+
+            builder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+            builder.show()
         }
     }
 

@@ -1,4 +1,4 @@
-package minipaige.example.provenance.com.Model
+package minipaige.example.provenance.com.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.archival_item.view.*
 import minipaige.example.provenance.com.Controller.ItemDetailActivity
+import minipaige.example.provenance.com.Model.ArchivalItem
 import minipaige.example.provenance.com.R
 import minipaige.example.provenance.com.Utilities.EXTRA_ARCHVIAL_ITEM
 
@@ -24,7 +25,6 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        //if archivalItems.isEmpty(), then
         val item = archivalItems[position]
         holder.setData(item, position)
     }
@@ -35,7 +35,7 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
             val picasso = Picasso.get()
             picasso.load(item!!.image).rotate(90F).into(itemView.itemImage)
 
-            itemView.collection.text = item!!.collection
+            itemView.collection.text = item.collection
 
             if (item.box != "" && item.folder != "") {
                 itemView.container1.text = "Box: ${item.box}"
@@ -43,7 +43,7 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
             } else if (item.box != "") {
                 itemView.container1.text = "Box: ${item.box}"
             } else if (item.folder != "") {
-                itemView.container1.text = "Folder: ${item!!.folder}"
+                itemView.container1.text = "Folder: ${item.folder}"
             } else {
                 itemView.container1.text = item.otherCntr
             }

@@ -1,5 +1,7 @@
 package minipaige.example.provenance.com.Controller
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -56,7 +58,15 @@ class ItemDetailActivity : MainActivity() {
         }
 
         deleteBtn.setOnClickListener{
-            deleteItem()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Delete")
+            builder.setMessage("Are you sure you want to permanently delete this item?")
+            builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+                deleteItem()
+            }
+
+            builder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+            builder.show()
         }
     }
 
@@ -67,7 +77,7 @@ class ItemDetailActivity : MainActivity() {
         itemRef.removeValue().addOnSuccessListener {
             val imageRef = FirebaseStorage.getInstance().getReferenceFromUrl(archivalItem.image!!)
             imageRef.delete().addOnSuccessListener {
-                Toast.makeText(this, "Item removed successfully.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Item removed successfully.", Toast.LENGTH_LONG).show()
 
                 val homeActivity = Intent(this, HomeActivity::class.java)
                 startActivity(homeActivity)

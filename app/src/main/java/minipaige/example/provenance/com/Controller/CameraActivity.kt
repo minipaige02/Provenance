@@ -55,8 +55,6 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             builder.setTitle("Are you sure you want to exit?")
             builder.setMessage("Any photos you have taken will be lost. Are you sure you want to proceed?")
             builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
-                finish()
-
                 val homeActivity = Intent(this, HomeActivity::class.java)
                 startActivity(homeActivity)
             }
