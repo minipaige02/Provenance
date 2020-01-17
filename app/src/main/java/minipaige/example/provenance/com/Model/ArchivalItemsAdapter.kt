@@ -24,6 +24,7 @@ class ArchivalItemsAdapter(val context: Context, val archivalItems: List<Archiva
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        //if archivalItems.isEmpty(), then
         val item = archivalItems[position]
         holder.setData(item, position)
     }

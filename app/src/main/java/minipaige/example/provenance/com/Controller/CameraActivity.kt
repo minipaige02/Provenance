@@ -1,6 +1,8 @@
 package minipaige.example.provenance.com.Controller
 
 import android.Manifest
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.util.Size
 import android.graphics.Matrix
@@ -39,6 +41,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
     //View finder and capture functionality mainly taken from
     // Google's CameraX Codelab: https://codelabs.developers.google.com/codelabs/camerax-getting-started/
     override fun onCreate(savedInstanceState: Bundle?) {
+        println("Image links: $imageLinks")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
@@ -48,15 +51,23 @@ class CameraActivity : MainActivity(), LifecycleOwner {
         val archivalItem = intent.getParcelableExtra<ArchivalItem>(EXTRA_ARCHVIAL_ITEM)
 
         cancelBtn.setOnClickListener{
-            Toast.makeText(this, "No images uploaded.", Toast.LENGTH_SHORT).show()
-            val homeActivity = Intent(this, HomeActivity::class.java)
-            startActivity(homeActivity)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Are you sure you want to exit?")
+            builder.setMessage("Any photos you have taken will be lost. Are you sure you want to proceed?")
+            builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+                finish()
+
+                val homeActivity = Intent(this, HomeActivity::class.java)
+                startActivity(homeActivity)
+            }
+
+            builder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+            builder.show()
         }
 
         uploadBtn.setOnClickListener{
-            //TO DO create images
             if (imageLinks.isEmpty()) {
-                Toast.makeText(this, "No images to be upload.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No images to upload.", Toast.LENGTH_SHORT).show()
             } else {
                 writeToDatabase(archivalItem)
 
@@ -87,13 +98,10 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
     private fun startCamera() {
 
-        // Create configuration object for the viewfinder use case
         val previewConfig = PreviewConfig.Builder().apply {
             setTargetResolution(Size(640, 480))
         }.build()
 
-
-        // Build the viewfinder use case
         val preview = Preview(previewConfig)
 
         // Every time the viewfinder is updated, recompute layout
@@ -108,12 +116,8 @@ class CameraActivity : MainActivity(), LifecycleOwner {
             updateTransform()
         }
 
-        // Create configuration object for the image capture use case
         val imageCaptureConfig = ImageCaptureConfig.Builder()
             .apply {
-                // We don't set a resolution for image capture; instead, we
-                // select a capture mode which will infer the appropriate
-                // resolution based on aspect ration and requested mode
                 setCaptureMode(ImageCapture.CaptureMode.MIN_LATENCY)
             }.build()
 
@@ -154,8 +158,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
                                 val downloadUri = task.result
                                 imageLinks.add(downloadUri.toString())
                             } else {
-                                // Handle failures
-                                // ...
+                                Log.d("Firebase Storage", "Error uploading image to cloud.")
                             }
                         }
 
@@ -169,7 +172,6 @@ class CameraActivity : MainActivity(), LifecycleOwner {
                 })
         }
 
-        // Bind use cases to lifecycle
         CameraX.bindToLifecycle(this, preview, imageCapture)
     }
 
@@ -190,14 +192,9 @@ class CameraActivity : MainActivity(), LifecycleOwner {
         }
         matrix.postRotate(-rotationDegrees.toFloat(), centerX, centerY)
 
-        // Finally, apply transformations to our TextureView
         viewFinder.setTransform(matrix)
     }
 
-    /**
-     * Process result from permission request dialog box, has the request
-     * been granted? If yes, start Camera. Otherwise display a toast
-     */
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
@@ -234,7 +231,6 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
         val msg = "$imageCount images uploaded."
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-
     }
 
 }
