@@ -6,7 +6,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 import minipaige.example.provenance.com.R
 
-class WelcomeActivity : MainActivity() {
+class LoginActivity : MainActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
