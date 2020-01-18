@@ -3,14 +3,14 @@ package minipaige.example.provenance.com.Controller
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_welcome.*
+import kotlinx.android.synthetic.main.activity_login.*
 import minipaige.example.provenance.com.R
 
 class WelcomeActivity : MainActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        setContentView(R.layout.activity_login)
 
         logInBtn.setOnClickListener {
             username = usrNmInput.text.toString().trim()
