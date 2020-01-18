@@ -16,41 +16,49 @@ class MetadataActivity : MainActivity() {
         setContentView(R.layout.activity_metadata)
 
         metadataNextBtn.setOnClickListener {
-            //TODO: convert tags to array here
-            // put in helper method?
-            archivalItem.repository = repInput.text.toString().trim()
-            archivalItem.collection = colInput.text.toString().trim()
-            archivalItem.box = boxInput.text.toString().trim()
-            archivalItem.folder = folderInput.text.toString().trim()
-            archivalItem.otherCntr = otherCntrInput.text.toString().trim()
-            archivalItem.description = cntrDescInput.text.toString().trim()
-            archivalItem.tags = tagsInput.text.toString().trim()
-
-
+            createArchivalItem()
 
             if (archivalItem.repository == "" ) {
-                Toast.makeText(this, "Repository cannot be blank.", Toast.LENGTH_LONG).show()
+                repInput.error = "Repository cannot be blank."
+                repInput.requestFocus()
+                return@setOnClickListener
             } else if (archivalItem.collection == "") {
-                Toast.makeText(this, "Collection name cannot be blank.", Toast.LENGTH_LONG).show()
+                colInput.error = "Collection name cannot be blank."
+                colInput.requestFocus()
+                return@setOnClickListener
             } else if (archivalItem.box == "" && archivalItem.folder == "" && archivalItem.otherCntr == "") {
-                Toast.makeText(this, "Box, folder, or other container must be filled out.", Toast.LENGTH_LONG).show()
+                boxInput.error = "Please enter either box, folder, or other container description."
+                boxInput.requestFocus()
+                return@setOnClickListener
             } else {
-                // TODO: put in helper method?
-                repInput.text.clear()
-                colInput.text.clear()
-                boxInput.text.clear()
-                folderInput.text.clear()
-                otherCntrInput.text.clear()
-                cntrDescInput.text.clear()
-                tagsInput.text.clear()
+                clearInputs()
 
                 val cameraActivity = Intent(this, CameraActivity::class.java)
                 cameraActivity.putExtra(EXTRA_ARCHVIAL_ITEM, archivalItem)
                 startActivity(cameraActivity)
             }
-
         }
     }
 
+    private fun createArchivalItem() {
+        archivalItem.repository = repInput.text.toString().trim()
+        archivalItem.collection = colInput.text.toString().trim()
+        archivalItem.box = boxInput.text.toString().trim()
+        archivalItem.folder = folderInput.text.toString().trim()
+        archivalItem.otherCntr = otherCntrInput.text.toString().trim()
+        archivalItem.description = cntrDescInput.text.toString().trim()
+        archivalItem.tags = tagsInput.text.toString().trim()
+    }
+
+    private fun clearInputs() {
+        repInput.text.clear()
+        colInput.text.clear()
+        boxInput.text.clear()
+        folderInput.text.clear()
+        otherCntrInput.text.clear()
+        cntrDescInput.text.clear()
+        tagsInput.text.clear()
+
+    }
 
 }

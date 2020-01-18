@@ -19,14 +19,12 @@ class LoginActivity : MainActivity() {
                 val homeActivity = Intent(this, HomeActivity::class.java)
                 startActivity(homeActivity)
             } else {
-                Toast.makeText(this, "Please enter a valid username.", Toast.LENGTH_SHORT).show()
+                usrNmInput.error = "Please enter a valid username."
+                usrNmInput.requestFocus()
+                return@setOnClickListener
             }
 
         }
 
-        newAcctBtn.setOnClickListener {
-            val newAcctActivity = Intent(this, NewAcctActivity::class.java)
-            startActivity(newAcctActivity)
-        }
     }
 }

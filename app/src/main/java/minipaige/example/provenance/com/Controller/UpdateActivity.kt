@@ -69,11 +69,11 @@ class UpdateActivity : MainActivity() {
 
         //validations
         if (repository.isEmpty()) {
-            repUTxt.error = "Please enter a repository."
+            repUTxt.error = "Repository cannot be blank"
             repUTxt.requestFocus()
             return false
         } else if (collection.isEmpty()) {
-            colUTxt.error = "Please enter a collection name."
+            colUTxt.error = "Collection name cannot be blank."
             colUTxt.requestFocus()
             return false
         } else if (box.isEmpty() && folder.isEmpty() && otherCntr.isEmpty()) {

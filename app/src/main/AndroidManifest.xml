@@ -15,13 +15,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Controller.UpdateActivity"></activity>
         <activity android:name=".Controller.ItemDetailActivity" />
-        <activity android:name=".Controller.NewAcctActivity" />
         <activity
             android:name=".Controller.CameraActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".Controller.MainActivity" />
         <activity android:name=".Controller.MetadataActivity" />
-        <activity android:name=".Controller.WelcomeActivity">
+        <activity android:name=".Controller.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
