@@ -43,6 +43,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        var displayName = ""
         var username = ""
     }
 }

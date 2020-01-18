@@ -1,5 +1,7 @@
 package minipaige.example.provenance.com.Controller
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -23,7 +25,8 @@ class HomeActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        welcomeTxt.text = "Welcome, ${username}!"
+        welcomeTxt.text = "Welcome, ${displayName}!"
+        println("username: $username")
 
         archivalItemsList = mutableListOf()
         databaseRef = FirebaseDatabase.getInstance().getReference(username)
@@ -34,7 +37,7 @@ class HomeActivity : MainActivity() {
                 if (dataSnapshot!!.exists()) {
                     listHeading.text = "Your documents"
                     archivalItemsList.clear()
-                    for(item in dataSnapshot.children){
+                    for (item in dataSnapshot.children) {
                         val archivalItem = item.getValue(ArchivalItem::class.java)
                         archivalItemsList.add(archivalItem!!)
                     }
@@ -57,7 +60,11 @@ class HomeActivity : MainActivity() {
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(TAG, "Failed to read value.", error.toException())
-                Toast.makeText(this@HomeActivity, "Error retrieving items from database.", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this@HomeActivity,
+                    "Error retrieving items from database.",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         })
 
@@ -65,6 +72,23 @@ class HomeActivity : MainActivity() {
             val metadataActivity = Intent(this, MetadataActivity::class.java)
             startActivity(metadataActivity)
         }
+
+        logoutBtn.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Logout")
+            builder.setMessage("Are you sure you want to logout?")
+            builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+                signOut()
+            }
+
+            builder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+            builder.show()
+        }
+    }
+
+    private fun signOut() {
+        FirebaseAuth.getInstance().signOut()
+        finish()
     }
 
 }
