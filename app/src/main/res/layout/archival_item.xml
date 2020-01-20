@@ -18,11 +18,10 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
-
         <ImageView
             android:id="@+id/itemImage"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
             android:contentDescription="@string/archival_document_image"
             android:scaleType="centerCrop"
             tools:src="@drawable/poe_sketch" />
