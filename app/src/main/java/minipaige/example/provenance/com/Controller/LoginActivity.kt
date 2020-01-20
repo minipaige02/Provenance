@@ -2,7 +2,6 @@ package minipaige.example.provenance.com.Controller
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 import minipaige.example.provenance.com.R
 
@@ -15,13 +14,20 @@ class LoginActivity : MainActivity() {
         logInBtn.setOnClickListener {
             username = usrNmInput.text.toString().trim()
 
-            if (username != "") {
-                val homeActivity = Intent(this, HomeActivity::class.java)
-                startActivity(homeActivity)
-            } else {
+            if (username.contains(".") || username.contains("$") || username.contains("#") ||
+                username.contains("[") || username.contains("]") || username.contains("/")) {
+                usrNmInput.error = "Username cannot contain ., $, #, [, ], or / characters."
+                usrNmInput.requestFocus()
+                return@setOnClickListener
+
+            } else if (username.isEmpty()){
                 usrNmInput.error = "Please enter a valid username."
                 usrNmInput.requestFocus()
                 return@setOnClickListener
+            } else {
+                val homeActivity = Intent(this, HomeActivity::class.java)
+                startActivity(homeActivity)
+
             }
 
         }

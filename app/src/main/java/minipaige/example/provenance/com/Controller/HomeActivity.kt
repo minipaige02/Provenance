@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.core.view.marginTop
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
@@ -17,6 +16,7 @@ class HomeActivity : MainActivity() {
     lateinit var databaseRef: DatabaseReference
     lateinit var archivalItemsList: MutableList<ArchivalItem>
     lateinit var layoutManager: GridLayoutManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
