@@ -162,10 +162,6 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
                         val msg = "Photo capture succeeded: ${file.absolutePath}"
                         Log.d("CameraXApp", msg)
-                        viewFinder.post {
-                            Toast.makeText(baseContext, "Document captured", Toast.LENGTH_SHORT).show()
-                        }
-
                     }
                 })
         }
