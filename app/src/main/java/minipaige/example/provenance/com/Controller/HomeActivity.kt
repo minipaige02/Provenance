@@ -163,7 +163,10 @@ class HomeActivity : MainActivity() {
                     archivalItems!!.addAll(archivalItemList!!)
                 } else {
                     for (item in archivalItemList!!) {
-                        if (item.collection?.toLowerCase()?.contains(constraint.toString().toLowerCase()) as Boolean) {
+                        if (item.collection?.toLowerCase()?.contains(constraint.toString().toLowerCase()) as Boolean
+                            || item.tags?.toLowerCase()?.contains(constraint.toString().toLowerCase()) as Boolean
+                            || item.description?.toLowerCase()?.contains(constraint.toString().toLowerCase()) as Boolean
+                            || item.repository?.toLowerCase()?.contains(constraint.toString().toLowerCase()) as Boolean ) {
                             archivalItems!!.add(item)
                         }
                     }

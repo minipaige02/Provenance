@@ -50,4 +50,5 @@
     <string name="sketch_of_edgar_allan_poe">sketch of Edgar Allan Poe</string>
     <string name="letter_from_edgar_allan_poe">letter from Edgar Allan Poe</string>
     <string name="photograph_of_frida_kahlo_and_diego_rivera">photograph of Frida Kahlo and Diego Rivera</string>
+    <string name="search">Search</string>
 </resources>
