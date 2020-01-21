@@ -4,15 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.WelcomeActivity">
+    tools:context=".Controller.LoginActivity">
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/certificate_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/image2"
+        app:layout_constraintEnd_toStartOf="@+id/image2"
+        app:layout_constraintStart_toStartOf="@+id/appHead"
+        app:layout_constraintTop_toTopOf="@+id/image2"
+        app:srcCompat="@drawable/guinea_pigs" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="70dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/sketch_of_edgar_allan_poe"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/image3"
+        app:layout_constraintStart_toEndOf="@+id/image1"
+        app:layout_constraintTop_toBottomOf="@+id/appHead"
+        app:srcCompat="@drawable/poe_sketch" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/letter_from_edgar_allan_poe"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/image2"
+        app:layout_constraintEnd_toStartOf="@+id/image4"
+        app:layout_constraintStart_toEndOf="@+id/image2"
+        app:layout_constraintTop_toTopOf="@+id/image2"
+        app:srcCompat="@drawable/poe_letter" />
+
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="70dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/photograph_of_frida_kahlo_and_diego_rivera"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/image2"
+        app:layout_constraintEnd_toEndOf="@+id/appHead"
+        app:layout_constraintStart_toEndOf="@+id/image3"
+        app:layout_constraintTop_toTopOf="@+id/image2"
+        app:srcCompat="@drawable/frida_y_diego" />
 
     <TextView
         android:id="@+id/appHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="74dp"
         android:fontFamily="@font/abhaya_libre_bold"
-        android:text="@string/provenance"
+        android:text="@string/app_name"
         android:textAllCaps="false"
         android:textColor="#3F51B5"
         android:textSize="60sp"
@@ -33,8 +88,9 @@
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/appHead"
-        app:layout_constraintTop_toBottomOf="@+id/appHead" />
+        app:layout_constraintTop_toBottomOf="@+id/image2" />
 
     <EditText
         android:id="@+id/usrNmInput"
@@ -71,6 +127,7 @@
         android:id="@+id/logInBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#3F51B5"
         android:text="@string/log_in"
         android:textColor="@android:color/white"

@@ -11,11 +11,13 @@ data class ArchivalItem(
     var folder: String?,
     var otherCntr: String?,
     var description: String?,
+    var date: String?,
     var tags: String?,
     var image: String?
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -36,6 +38,7 @@ data class ArchivalItem(
         "",
         "",
         "",
+        "",
         ""
     )
 
@@ -47,6 +50,7 @@ data class ArchivalItem(
         parcel.writeString(folder)
         parcel.writeString(otherCntr)
         parcel.writeString(description)
+        parcel.writeString(date)
         parcel.writeString(tags)
         parcel.writeString(image)
     }

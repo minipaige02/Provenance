@@ -37,7 +37,7 @@
             <TextView
                 android:id="@+id/metadataDescTxt"
                 android:layout_width="wrap_content"
-                android:layout_height="49dp"
+                android:layout_height="39dp"
                 android:text="@string/enter_collection_to_add_to_your_images"
                 android:textSize="16sp" />
 
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/hoover_institution_library_archives"
+                android:hint="@string/repository_name2"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/bertram_david_wolfe_papers"
+                android:hint="@string/collection_title2"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -93,7 +93,7 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/_12"
+                android:hint="@string/box_number"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -112,7 +112,7 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/_55"
+                android:hint="@string/folder_number"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -131,26 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/envelope_m"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:id="@+id/cntrDescLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abhaya_libre_bold"
-                android:text="@string/container_description"
-                android:textColor="#3F51B5"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/cntrDescInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/_12_prints_of_frida_kahlo"
+                android:hint="@string/container_desc_ex"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -169,7 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/frida_portraits_biography_project"
+                android:hint="@string/tags_ex"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/black" />
@@ -182,7 +163,8 @@
                 android:background="#3F51B5"
                 android:fontFamily="@font/abhaya_libre_bold"
                 android:text="@string/next"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
 
 
         </LinearLayout>

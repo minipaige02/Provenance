@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     tools:context=".Controller.ItemDetailActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imageD"
@@ -146,7 +152,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/cntrDTxt"
-        tools:text="Images of Poe's manuscripts, letters..." />
+        tools:text="Sketch of Poe by..." />
+
+    <TextView
+        android:id="@+id/dateDLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/date"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descDTxt" />
+
+        <TextView
+            android:id="@+id/dateDTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/descDTxt"
+            tools:text="1900" />
 
     <TextView
         android:id="@+id/citeLabel"
@@ -158,7 +186,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descDTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/dateDTxt" />
 
     <TextView
         android:id="@+id/citationTxt"
@@ -169,7 +197,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/descDTxt"
+        app:layout_constraintTop_toBottomOf="@+id/dateDTxt"
         tools:text="[Description of document]. Date. Box 426. Edgar Allan Poe Art Collection. Harry Ransom Center." />
 
     <TextView
@@ -243,4 +271,5 @@
         app:rippleColor="@android:color/holo_red_dark"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

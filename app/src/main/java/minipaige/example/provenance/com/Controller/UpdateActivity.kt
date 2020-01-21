@@ -65,6 +65,7 @@ class UpdateActivity : MainActivity() {
         val folder = folderUTxt.text.toString().trim()
         val otherCntr = otherCntrUTxt.text.toString().trim()
         val description = descUTxt.text.toString().trim()
+        val date = dateUTxt.text.toString().trim()
         val tags = tagsUTxt.text.toString().trim()
 
         //validations
@@ -82,7 +83,7 @@ class UpdateActivity : MainActivity() {
             return false
         }
 
-        archivalItem = ArchivalItem(archivalItem.id, repository, collection, box, folder, otherCntr, description, tags, archivalItem.image)
+        archivalItem = ArchivalItem(archivalItem.id, repository, collection, box, folder, otherCntr, description, date, tags, archivalItem.image)
         databaseRef.child(archivalItem.id!!).setValue(archivalItem)
 
         Toast.makeText(this, "Item updated.", Toast.LENGTH_SHORT).show()
