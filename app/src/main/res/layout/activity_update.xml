@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@string/repository"
+            android:text="@string/repository_colon"
             android:textAlignment="textStart"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
@@ -44,16 +44,15 @@
             android:id="@+id/repUTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/hoover_institution_library_archives"
+            android:hint="@string/repository_name2"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/repULabel"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/imageU"
             tools:text="Harry Ransom Center" />
 
@@ -83,30 +82,29 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/tagsUTxt"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descUTxt" />
+            app:layout_constraintTop_toTopOf="@+id/tagsUTxt" />
 
         <EditText
             android:id="@+id/tagsUTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/frida_portraits_biography_project"
+            android:hint="@string/tags_ex"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tagsULabel"
-            app:layout_constraintTop_toBottomOf="@+id/descUTxt"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/dateUTxt"
             tools:text="Poe; art; bio project; more things" />
 
         <TextView
             android:id="@+id/descULabel"
-            android:layout_width="wrap_content"
+            android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/description"
+            android:text="@string/description2"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -118,15 +116,14 @@
             android:id="@+id/descUTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/_12_prints_of_frida_kahlo"
+            android:hint="@string/item_description2"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/descULabel"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/otherCntrUTxt"
             tools:text="Images of Poe's manuscripts, letters..." />
 
@@ -147,15 +144,14 @@
             android:id="@+id/otherCntrUTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/envelope_m"
+            android:hint="@string/container_desc_ex"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/otherCntrULabel"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/folderUTxt"
             tools:text="Flat file 20" />
 
@@ -177,14 +173,14 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:hint="@string/_55"
+            android:hint="@string/folder_number"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:textColor="@android:color/black"
             android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.162"
-            app:layout_constraintStart_toEndOf="@+id/folderULabel"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/boxUTxt"
             tools:text="17" />
 
@@ -205,16 +201,15 @@
             android:id="@+id/boxUTxt"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/_12"
+            android:hint="@string/box_number"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:textColor="@android:color/black"
             android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.123"
-            app:layout_constraintStart_toEndOf="@+id/boxULabel"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/colUTxt"
             tools:text="426" />
 
@@ -223,7 +218,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/collection"
+            android:text="@string/collection2"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -235,18 +230,45 @@
             android:id="@+id/colUTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/bertram_david_wolfe_papers"
+            android:hint="@string/collection_title2"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/colULabel"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/repUTxt"
             tools:text="Edgar Allan Poe Art Collection" />
+
+        <TextView
+            android:id="@+id/dateULabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/date"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/dateUTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dateUTxt" />
+
+        <EditText
+            android:id="@+id/dateUTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/date_ex"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/descUTxt"
+            tools:text="1900" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/closeBtn"
@@ -255,13 +277,20 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:clickable="true"
+            android:focusable="true"
             app:backgroundTint="?android:attr/colorButtonNormal"
             app:fabSize="mini"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/colorPrimary"
-            app:srcCompat="@drawable/ic_cancel"
-            android:focusable="true" />
+            app:srcCompat="@drawable/ic_cancel" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="118dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

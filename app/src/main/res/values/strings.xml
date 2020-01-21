@@ -1,25 +1,14 @@
 <resources>
     <string name="app_name">Provenance</string>
     <string name="log_in">Log In</string>
-    <string name="create_account">Create Account</string>
-    <string name="provenance">Provenance</string>
-    <string name="add_new_images">+ Add New Images</string>
-    <string name="view_images">View Images</string>
     <string name="archival_description">Archival Description</string>
     <string name="enter_collection_to_add_to_your_images">Enter collection information to add to your images.</string>
-    <string name="repository_name">Repository Name*</string>
-    <string name="bertram_david_wolfe_papers">Bertram David Wolfe papers</string>
-    <string name="collection_title">Collection Title*</string>
-    <string name="hoover_institution_library_archives"><![CDATA[Hoover Institution Library & Archives]]></string>
+    <string name="repository_name">*Repository Name</string>
+    <string name="collection_title">*Collection</string>
     <string name="box">Box</string>
-    <string name="_12">12</string>
     <string name="folder">Folder</string>
     <string name="other_container_type">Other container type</string>
-    <string name="envelope_m">Envelope M</string>
-    <string name="_55">55</string>
     <string name="container_description">Container Description</string>
-    <string name="_12_prints_of_frida_kahlo">12 prints of Frida Kahlo and ...</string>
-    <string name="frida_portraits_biography_project">Frida; portraits; biography project</string>
     <string name="tags">Tags</string>
     <string name="next">Next</string>
     <string name="password">Password</string>
@@ -27,7 +16,6 @@
     <string name="camera_image">camera image</string>
     <string name="home_image">home image</string>
     <string name="upload_documents_button">upload documents button</string>
-    <string name="create_items">Create Items</string>
     <string name="your_documents">Your documents</string>
     <string name="upload">Upload</string>
     <string name="archival_document_image">archival document image</string>
@@ -44,4 +32,18 @@
     <string name="folder2">Folder:</string>
     <string name="other_container">Other container:</string>
     <string name="update">Update</string>
+    <string name="item_description">Item description:</string>
+    <string name="date">Date:</string>
+    <string name="_1900">1900</string>
+    <string name="repository_colon">*Repository:</string>
+    <string name="repository_name2">repository name</string>
+    <string name="tags_ex">Ex: paintings; Frida biography; postcolonialism</string>
+    <string name="item_description2">Item description</string>
+    <string name="collection_title2">collection title</string>
+    <string name="date_ex">YYYY or YYYY Month DD</string>
+    <string name="folder_number">folder number</string>
+    <string name="box_number">box number</string>
+    <string name="container_desc_ex">container type and name</string>
+    <string name="collection2">*Collection:</string>
+    <string name="description2">Description:</string>
 </resources>

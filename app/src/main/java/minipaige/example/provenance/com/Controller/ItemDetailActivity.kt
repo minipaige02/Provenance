@@ -3,6 +3,8 @@ package minipaige.example.provenance.com.Controller
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
@@ -24,6 +26,8 @@ class ItemDetailActivity : MainActivity() {
         archivalItem = intent.getParcelableExtra<ArchivalItem>(EXTRA_ARCHVIAL_ITEM)
 
         lateinit var container: String
+        lateinit var description: String
+        lateinit var date: String
 
         val picasso = Picasso.get()
         picasso.load(archivalItem!!.image).rotate(90F).into(imageD)
@@ -39,10 +43,30 @@ class ItemDetailActivity : MainActivity() {
         } else {
             container = archivalItem.otherCntr!!
         }
+
         cntrDTxt.text = container
-        descDTxt.text = archivalItem.description
+        if (archivalItem.description == "") {
+            descDTxt.setTextColor(Color.GRAY)
+            descDTxt.setTypeface(null, Typeface.ITALIC)
+            descDTxt.text = "No description added"
+            description = "[Description of item]"
+        } else {
+            description = archivalItem.description!!
+            descDTxt.text = description
+        }
+
+        if (archivalItem.date == "") {
+            dateDTxt.setTextColor(Color.GRAY)
+            dateDTxt.setTypeface(null, Typeface.ITALIC)
+            dateDTxt.text = "Add item date"
+            date = "[Date]"
+        } else {
+            date = archivalItem.date!!
+            dateDTxt.text = date
+        }
+
         tagsDTxt.text = archivalItem.tags
-        citationTxt.text = "[Description of document]. [Date]. ${container}. ${archivalItem.collection}. ${archivalItem.repository}."
+        citationTxt.text = "${description}. ${date}. ${container}. ${archivalItem.collection}. ${archivalItem.repository}."
 
         editBtn.setOnClickListener{
             val updateActivity = Intent(this, UpdateActivity::class.java)
