@@ -162,6 +162,9 @@ class CameraActivity : MainActivity(), LifecycleOwner {
 
                         val msg = "Photo capture succeeded: ${file.absolutePath}"
                         Log.d("CameraXApp", msg)
+                        viewFinder.post {
+                            Toast.makeText(baseContext, "Document captured", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 })
         }
@@ -204,7 +207,7 @@ class CameraActivity : MainActivity(), LifecycleOwner {
     }
 
     /**
-     * Check if all permission specified in the manifest have been granted
+     * Check if all permissions specified in the manifest have been granted
      */
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(
@@ -226,5 +229,4 @@ class CameraActivity : MainActivity(), LifecycleOwner {
         val msg = "$imageCount images uploaded."
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
-
 }

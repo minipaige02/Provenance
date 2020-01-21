@@ -46,4 +46,8 @@
     <string name="container_desc_ex">container type and name</string>
     <string name="collection2">*Collection:</string>
     <string name="description2">Description:</string>
+    <string name="certificate_image">certificate image</string>
+    <string name="sketch_of_edgar_allan_poe">sketch of Edgar Allan Poe</string>
+    <string name="letter_from_edgar_allan_poe">letter from Edgar Allan Poe</string>
+    <string name="photograph_of_frida_kahlo_and_diego_rivera">photograph of Frida Kahlo and Diego Rivera</string>
 </resources>

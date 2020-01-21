@@ -21,15 +21,15 @@
 
         <ImageView
             android:id="@+id/itemImage"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
             android:contentDescription="@string/archival_document_image"
             android:scaleType="centerCrop"
             tools:src="@drawable/poe_sketch" />
 
         <TextView
             android:id="@+id/collection"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/itemImage"
             android:maxLines="2"
@@ -40,7 +40,7 @@
 
         <TextView
             android:id="@+id/container1"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/collection"
             android:maxLines="1"
@@ -51,7 +51,7 @@
 
         <TextView
             android:id="@+id/container2"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container1"
             android:maxLines="1"
