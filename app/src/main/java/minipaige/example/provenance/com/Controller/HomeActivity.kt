@@ -1,5 +1,7 @@
 package minipaige.example.provenance.com.Controller
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -64,6 +66,19 @@ class HomeActivity : MainActivity() {
             val metadataActivity = Intent(this, MetadataActivity::class.java)
             startActivity(metadataActivity)
         }
+    }
+
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("Are you sure you want to exit the app?")
+        builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+            val loginActivity = Intent(this, LoginActivity::class.java)
+            startActivity(loginActivity)
+            finish()
+        }
+
+        builder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+        builder.show()
     }
 
 }
