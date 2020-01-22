@@ -33,19 +33,21 @@ To install this project, download Android Studio:
 
 ## Acknowledgments
 ### Images
-- App logo: Excerpt from [The Raven]: And the Raven, never flitting, still is sitting - still is sitting..., circa 1846, Edgar Allan Poe Collection, Box 1, Folder 12, Harry Ransom Center, The University of Texas at Austin
-- Login images: 
-..*Grand Council Exclusive Order of Guinea Pigs certificate, 1946, Beth Flippen Scheel papers, Box 1, Hoover Institution Archives
-..*Portrait of Edgar Allan Poe by Arthur Garfield Learned, undated, Edgar Allan Poe Art Collection, Box 426, Harry Ransom Center, The University of Texas at Austin
-..*To Miss Louise Olivia Hunter, 1847 February 14, Edgar Allan Poe Collection,  Box 1, Folder 14, Harry Ransom Center, The University of Texas at Austin
-..*Photograph of Frida Kahlo and Diego Rivera, undated, Bertram David Wolfe papers, Envelope X, Hoover Institution Archives
+#### App logo: 
+Excerpt from [The Raven]: And the Raven, never flitting, still is sitting - still is sitting..., circa 1846, Edgar Allan Poe Collection, Box 1, Folder 12, Harry Ransom Center, The University of Texas at Austin
+
+#### Login images:
+* Grand Council Exclusive Order of Guinea Pigs certificate, 1946, Beth Flippen Scheel papers, Box 1, Hoover Institution Archives
+* Portrait of Edgar Allan Poe by Arthur Garfield Learned, undated, Edgar Allan Poe Art Collection, Box 426, Harry Ransom Center, The University of Texas at Austin
+* To Miss Louise Olivia Hunter, 1847 February 14, Edgar Allan Poe Collection,  Box 1, Folder 14, Harry Ransom Center, The University of Texas at Austin
+* Photograph of Frida Kahlo and Diego Rivera, undated, Bertram David Wolfe papers, Envelope X, Hoover Institution Archives
 
 Speacial thanks to Sarah Patton and Rachel Bauer, Sally DeBauche, and Justyna Szulc-Maziarz for their support and help in obtaining digital copies of images from Hoover Institution Archives. 
 
 ### Tutorials
--Kotlin for Android: Beginner to Advanced by Mark Price: https://www.udemy.com/course/devslopes-android-kotlin/
--How to Filter a RecyclerView with SearchView by Coding in Flow: https://www.youtube.com/watch?v=sJ-Z9G0SDhc
--Filter RecyclerView using Search View on App Bar by Prabeesh R K: https://www.youtube.com/watch?v=qzbvDJqXeJs
+- Kotlin for Android: Beginner to Advanced by Mark Price: https://www.udemy.com/course/devslopes-android-kotlin/
+- How to Filter a RecyclerView with SearchView by Coding in Flow: https://www.youtube.com/watch?v=sJ-Z9G0SDhc
+- Filter RecyclerView using Search View on App Bar by Prabeesh R K: https://www.youtube.com/watch?v=qzbvDJqXeJs
 
 
 Developed as a capstone project for Ada Developers Academy, Cohort 12.
