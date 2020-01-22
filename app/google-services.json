@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "984287220873",
+    "firebase_url": "https://provenance-6fca1.firebaseio.com",
+    "project_id": "provenance-6fca1",
+    "storage_bucket": "provenance-6fca1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984287220873:android:c2c9588ce5605005b3e258",
+        "android_client_info": {
+          "package_name": "minipaige.example.provenance.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984287220873-pjb307qb5qu111ngl72v429mrukqqac0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "minipaige.example.provenance.com",
+            "certificate_hash": "34dcdfa8b21299754e1a184c8afdee7bc5a27625"
+          }
+        },
+        {
+          "client_id": "984287220873-6b53bjjths4mb7h77opid1m2556vss6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlFqf7FynQfo26Ex47YbhrCStHeU37WAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984287220873-6b53bjjths4mb7h77opid1m2556vss6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
