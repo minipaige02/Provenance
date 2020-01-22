@@ -50,7 +50,8 @@ Speacial thanks to Sarah Patton and Rachel Bauer, Sally DeBauche, and Justyna Sz
 - Filter RecyclerView using Search View on App Bar by Prabeesh R K: https://www.youtube.com/watch?v=qzbvDJqXeJs
 
 
-Developed as a capstone project for Ada Developers Academy, Cohort 12.
+
+###### Developed as a capstone project for Ada Developers Academy, Cohort 12.
 ###### *A product of the Nemesii Team - "Do better."*
 
 
