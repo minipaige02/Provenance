@@ -5,7 +5,9 @@
 
 The modern researcher spends most of their time in archives and special collections photographing historical documents as opposed to reading them. Although the ability to photograph materials on their own devices saves time, it can be hard for researchers to keep track of where those documents came from - a necessary component when writing acurate scholarly citations. 
 
-The Android app Provenance aims to allow researchers to take images of archival materials while simultaneously attaching collection metadata to them so that researchers can easily manage their images and correctly cite their materials when publishing their research.
+The Android app Provenance aims to allow researchers to take images of archival materials while simultaneously attaching collection metadata to them so that researchers can easily manage their images and correctly cite materials when publishing their research.
+
+[Provenance Slides - with app images](https://docs.google.com/presentation/d/1MMO61RWm_4GpIa10VGiFgn3kdCd-ppNI0bveCFOllIE/edit?usp=sharing)
 
 ## Getting Started
 To install this project, download Android Studio:
